@@ -1,0 +1,15 @@
+{
+    "name": "rtler/blademacro",
+    "description": "add macro to blade laravel",
+    "license": "GPL2",
+    "authors": [
+        {
+            "name": "hooman naghiee",
+            "email": "hooman@rtler.com"
+        }
+    ],
+    "require": {},
+    "psr-4": {
+      "Rtler\\BladeMacro\\": "src/"
+    }
+}
