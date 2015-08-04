@@ -8,6 +8,7 @@
             "email": "hooman@rtler.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {},
     "psr-4": {
       "Rtler\\BladeMacro\\": "src/"
