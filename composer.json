@@ -1,16 +1,16 @@
 {
-    "name": "rtler/blademacro",
-    "description": "add macro to blade laravel",
-    "license": "GPL2",
-    "authors": [
-        {
-            "name": "hooman naghiee",
-            "email": "hooman@rtler.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {},
-    "psr-4": {
-      "Rtler\\BladeMacro\\": "src/"
+  "name": "rtler/blademacro",
+  "description": "add macro to blade laravel",
+  "license": "GPL2",
+  "authors": [
+    {
+      "name": "hooman naghiee",
+      "email": "hooman@rtler.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "psr-4": {
+    "Rtler\\BladeMacro\\": "src/"
+  }
 }
