@@ -10,8 +10,7 @@ add this to your providers
     ],
 ```
 
-and register macroes using
-
+and register macroes using(for adding php code to view write it in string)
 ```php
     BladeMacro::macro('inputText',function($arg1,$arg2,$arg3,$arg4){
          return'testing '.$arg1.' '.$arg2.' '.$arg3.' '.$arg4;
@@ -21,4 +20,10 @@ and register macroes using
 and in view use it like this:
 ```php
     @macro::inputText('name','value', 'label' , 'options')
+```
+
+and becuse of that this code replase the return string of the BladeMacro::macro function and cache it, after changeing the macro
+run the command 
+```
+php artisan view:clear
 ```
