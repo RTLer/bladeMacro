@@ -5,7 +5,7 @@ add this to your providers
 ```php
     'providers' => [
 		...
-        App\Zarinpal\Macro\BladeMacroServiceProvider::class
+        RTLer\BladeMacro\BladeMacroServiceProvider::class
 		...
     ],
 ```

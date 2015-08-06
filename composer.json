@@ -10,7 +10,9 @@
   ],
   "minimum-stability": "stable",
   "require": {},
-  "psr-4": {
-    "Rtler\\BladeMacro\\": "src/"
+  "autoload": {
+    "psr-4": {
+      "Rtler\\BladeMacro\\": "src/"
+    }
   }
 }
