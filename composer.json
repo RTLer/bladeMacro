@@ -9,7 +9,9 @@
     }
   ],
   "minimum-stability": "stable",
-  "require": {},
+  "require": {
+    "illuminate/html": "^5.0"
+  },
   "autoload": {
     "psr-4": {
       "Rtler\\BladeMacro\\": "src/"
