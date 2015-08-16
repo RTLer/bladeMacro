@@ -3,35 +3,35 @@
 namespace Rtler\BladeMacro;
 
 
+use BadMethodCallException;
+
 class BladeMacro
 {
-    use Macroable;
+
+    protected static $macroName='macro';
 
     /**
-     * register `@macro` tag
+     * Register a custom macro(directive).
+     *
+     * @param  string $name
+     * @param  callable $macro
+     * @param null $prefix
      */
-    public static function register()
+    public static function macro($name, callable $macro,$prefix = null)
     {
-        // @macro
-        \Blade::extend(function ($view) {
+        if(empty($prefix)){
+            $prefix = self::$macroName;
+        }
+        \Blade::directive($prefix.ucwords($name),function($argsString = '()') use ($macro){
+            $args = [];
+            eval('$args = \Rtler\BladeMacro\BladeMacro::argsToArray'.$argsString.';');
+//            dd(\Blade::getCustomDirectives());
+            return call_user_func_array ($macro,$args);
 
-            $pattern = '/@macro::([^(\s]+)\( ?[\'"]([^\'"]+)[\'"] ?, ?[\'"]([^\'"]+)[\'"] ?, ?[\'"]([^\'"]+)[\'"] ?, ?[\'"]([^\'"]+)[\'"] ?\)/';
-
-            // @input::inputText('name', 'label', 'value', 'options');
-            while (preg_match($pattern, $view, $macro)) {
-                // $macro = Array ( [0] => @macro::inputText('name', 'label', 'value', 'options') [1] => inputText [2] => name [3] => label [4] => value [5] => options )
-                if (self::hasMacro($macro[1])) {
-
-                    $macroOutText = call_user_func_array('self::' . $macro[1], array_slice($macro, 2));
-                } else {
-                    $macroOutText = substr($macro[0], 1);
-                }
-
-                $view = preg_replace($pattern, $macroOutText, $view, 1);
-            }
-
-            return $view;
         });
     }
 
+    public static function argsToArray(){
+        return func_get_args();
+    }
 }
