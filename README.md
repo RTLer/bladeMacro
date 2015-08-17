@@ -1,6 +1,7 @@
 # bladeMacro
 macro extension for laravel blade.
-it add macros to laravel blade that work just like html macro.
+it add macros to laravel blade that work just like html macro
+but there is problem with html macro that it register and echo function into compiled view code and run functin every time page loads, but this library run fubction and echo return into compiled view.
 
 ##installation
 add this to your providers
@@ -19,6 +20,7 @@ and register macroes using(for adding php code to view write it in string)
           return 'testing ' . $arg1 . ' ' . $arg2 . ' ' . $arg3 . ' ' . $arg4;
       });
 ```
+*it can contains php code in return string
 
 and in view use it like this (macroName(arg1, arg2, ...)):
 ```php
